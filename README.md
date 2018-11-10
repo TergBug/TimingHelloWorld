@@ -1,5 +1,3 @@
 # TimingHelloWorld
-[![Build status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.com/TergBug/TimingHelloWorld.svg?branch=master)](https://travis-ci.com/TergBug/TimingHelloWorld)
 TimingHelloWorld
-[travis-image]: https://api.travis-ci.com/TergBug/TimingHelloWorld.svg?branch=master
-[travis-url]: https://travis-ci.com/TergBug/TimingHelloWorld
