@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+    	<Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+    	<RollingFile name="app-log" fileName="logs/app.log" filePattern="app-%d{yyyy-MM-dd}-%i.log">
+        	<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        	<LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+        	<Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+    	</RollingFile>
+    	<RollingFile name="test-log" fileName="logs/test.log" filePattern="test-%d{yyyy-MM-dd}-%i.log">
+        	<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        	<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        	<Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+    	</RollingFile>
+    </Appenders>
+    
+    <Loggers>
+    	<Logger name="tduty.helloworld.App" additivity="false" level="DEBUG">
+    		<AppenderRef ref="app-log" />
+    	</Logger>
+    	<Logger name="tduty.helloworld.Tests" additivity="false" level="INFO">
+    		<AppenderRef ref="test-log" />
+    	</Logger>
+    	<Root level="warn">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+    
+</Configuration>
