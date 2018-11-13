@@ -25,7 +25,7 @@ public class Tests {
 				else if((h>=19&&h<23) && (m>=0&&m<60)) {
 					assertEquals(h+":"+m+" is evening", "evening", App.getTimeOfDay(LocalTime.of(h, m)));
 				}
-				else if(((h>=23 && h<24)||(h>=0&&h<6)) && (m>=0&&m<60)) {
+				else {
 					assertEquals(h+":"+m+" is night", "night", App.getTimeOfDay(LocalTime.of(h, m)));
 				}
 			}
