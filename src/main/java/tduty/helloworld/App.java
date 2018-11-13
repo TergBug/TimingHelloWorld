@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
  *
  */
 public class App {
-	private static final Logger log = LogManager.getLogger(App.class.getName());
+	private static final Logger LOG = LogManager.getLogger(App.class.getName());
 	
 	public static String getTimeOfDay(LocalTime in) {
 		if(in.isAfter(LocalTime.of(5, 59, 59, 999999999)) && in.isBefore(LocalTime.of(9, 0, 0, 0))) {
@@ -28,16 +28,16 @@ public class App {
 	}
 	
 	public static void main(String[] args) {
-		log.debug("---Starting program---");
-		log.debug("Create object ResourceBundle");
+		LOG.debug("---Starting program---");
+		LOG.debug("Create object ResourceBundle");
 		ResourceBundle rb = ResourceBundle.getBundle("message-resource");
-		log.debug("Get current time");
+		LOG.debug("Get current time");
 		LocalTime lt = LocalTime.now();
-		log.debug("Get key-word for time "+lt.toString());
+		LOG.debug("Get key-word for time "+lt.toString());
 		String key = getTimeOfDay(lt);
-		log.debug("Get string from message resource on \""+key+"\" key");
+		LOG.debug("Get string from message resource on \""+key+"\" key");
 		String s = rb.getString(key);
-		log.debug("Display this string in console");
+		LOG.debug("Display this string in console");
 		System.out.println(s);
 	}
 }
