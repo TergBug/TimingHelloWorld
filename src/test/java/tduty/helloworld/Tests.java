@@ -9,13 +9,13 @@ import org.apache.logging.log4j.LogManager;
 import org.junit.Test;
 
 public class Tests {
-	private static final Logger log = LogManager.getLogger(Tests.class.getName());
+	private static final Logger LOG = LogManager.getLogger(Tests.class.getName());
 	
 	@Test
 	public final void testGetTimeOfDay() {
 		for(int h = 0; h<24; h++) {
 			for(int m = 0; m<60; m++) {
-				log.info("Test for time "+h+":"+m);
+				LOG.info("Test for time "+h+":"+m);
 				if((h>=6&&h<9) && (m>=0&&m<60)) {
 					assertEquals(h+":"+m+" is morning", "morning", App.getTimeOfDay(LocalTime.of(h, m)));
 				}
